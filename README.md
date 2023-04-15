@@ -100,6 +100,9 @@ SELECT COUNT(*) from users;
 
 ### Explain Simple Example
 
+https://habr.com/ru/companies/postgrespro/articles/326096/
+https://www.youtube.com/watch?v=aaecM4wKdhY
+
 ```sql
 EXPLAIN SELECT COUNT(*) from users;
 EXPLAIN (FORMAT JSON) SELECT COUNT(*) from users;
@@ -111,4 +114,34 @@ EXPLAIN (FORMAT YAML) SELECT COUNT(DISTINCT id) from users;
 EXPLAIN ANALYZE SELECT COUNT(*) from users;
 EXPLAIN ANALYZE SELECT COUNT(id) from users;
 EXPLAIN ANALYZE SELECT COUNT(DISTINCT id) from users;
+```
+
+### Select
+
+```sh
+# SELECT * from users WHERE id=100000;
+
+id | login | name | email | country | created_at | updated_at
+
+100000 | bauch.garry.v | Garry Bauch V | v.bauch.garry@campaign-archive.com | Congo | 2023-04-15 14:47:38.110485 | 2023-04-15 14:47:38.110485
+
+(1 row)
+```
+
+```sh
+# \x on
+Expanded display is on.
+```
+
+```sh
+SELECT * from users WHERE id=100000;
+
+-[ RECORD 1 ]----------------------------------
+id         | 100000
+login      | bauch.garry.v
+name       | Garry Bauch V
+email      | v.bauch.garry@campaign-archive.com
+country    | Congo
+created_at | 2023-04-15 14:47:38.110485
+updated_at | 2023-04-15 14:47:38.110485
 ```
