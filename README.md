@@ -6,10 +6,12 @@
 $ docker compose -f docker-compose.yml up
 ```
 
-### How to get in PSQL container
+### How to get in containers
 
 ```sh
 $ docker exec -ti db_indexes-psql-1 bash
+
+$ docker exec -ti db_indexes-rails-1 bash
 ```
 
 ### How to get in PSQL
@@ -39,4 +41,14 @@ postgres=# \l
 
 ```
 postgres=# \q
+```
+
+### How to create Database
+
+```
+$ docker exec -ti db_indexes-rails-1 bash
+```
+
+```
+cd /app
 ```

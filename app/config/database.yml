@@ -1,0 +1,16 @@
+defaults: &defaults
+  pool: 10
+  host: psql
+  username: postgres
+  database: db_indexes
+  password: qwerty
+
+test:
+  adapter:  postgresql
+  encoding: unicode
+  <<: *defaults
+
+development:
+  adapter:  postgresql
+  encoding: unicode
+  <<: *defaults
