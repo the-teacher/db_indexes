@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# bundle exec rake db:seed
+
+seeds_file = Rails.root.join('db', 'seeds', "#{Rails.env.downcase}.rb")
+File.exist?(seeds_file) && load(seeds_file)
